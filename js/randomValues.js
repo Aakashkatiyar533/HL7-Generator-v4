@@ -448,6 +448,7 @@ $("#downloadADT-btn, #downloadORM-btn, #downloadORU-btn").click(function () {
   for (var i = 0; i < incr; i++) {
     var checkedArrays = []; // Array with positions of the checked fields
     var clonedArrays = []; // Empty array to be filled with the selected values
+    var genderSelectedArray = [];
     for (var m = 0; m < selectedArray.length; m++) {
       var segmentChoice = selectedArray[m][0];
       switch (segmentChoice) {
@@ -512,12 +513,16 @@ $("#downloadADT-btn, #downloadORM-btn, #downloadORU-btn").click(function () {
     var patient_name = firstname[(Math.random() * firstname.length) | 0] + "^" + middlename[(Math.random() * middlename.length) | 0] + "^" + lastname[(Math.random() * lastname.length) | 0];
     var date_of_birth = (x.getFullYear() - 20).toString() + mm + dd + hh + mm + ss;
     var mother_maiden_name = motherMaidenNameArray[(Math.random() * motherMaidenNameArray.length) | 0];
-    var gender = [];
     $('.gender:checked').each(function () {
-      gender += $(this).val();
+      genderSelectedArray.push($(this).val());
     });
-    if (jQuery.inArray("Random", gender)) {
-      gender = genderarray[Math.floor(Math.random() * genderarray.length)];
+
+    if (jQuery.inArray("Random", genderSelectedArray) == 0) {
+      genderSelectedArray.shift();
+      var gender = genderSelectedArray[Math.floor(Math.random() * genderSelectedArray.length)];
+    } else {
+      var gender = genderSelectedArray[Math.floor(Math.random() * genderSelectedArray.length)];
+
     }
     var alias = firstname[(Math.random() * firstname.length) | 0];
     var race = raceArray[Math.floor(Math.random() * raceArray.length)];
