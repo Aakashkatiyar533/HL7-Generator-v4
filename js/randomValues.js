@@ -189,7 +189,7 @@ function ORM() {
   $("#mshModal, #pidModal, #pv1Modal,  #al1Modal, #orcModal, #obrModal, #nteModal").show();
   $("#evnModal, #dg1Modal,#in1Modal, #gt1Modal,#obxModal").hide();
   $("#evnModalInput, #dg1ModalInput,#obxModalInput,#dg1ModalInput,#in1ModalInput, #gt1ModalInput, .adtmessageType, .orumessageType").prop("checked", false);
-  $("#orcModalInput,#obrModalInput,#nteModalInput, .ormmessageType").prop("checked", true);
+  $("#orcModalInput,#obrModalInput,#nteModalInput,#al1ModalInput, .ormmessageType").prop("checked", true);
   $(".messageTypeADTButtons,.messageTypeORUButtons,#downloadADT-btn,#downloadORU-btn").addClass("disabled");
   $("label.messageTypeORMButtons, #downloadORM-btn").removeClass("disabled");
   $("#downloadADT-btn,#downloadORU-btn").hide();
