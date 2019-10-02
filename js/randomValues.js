@@ -683,19 +683,15 @@ $("#downloadADT-btn, #downloadORM-btn, #downloadORU-btn").click(function () {
   location.href = "data:application/zip;base64," + content;
 });
 
-function CopyToClipboard(containerid) {
-  if (document.selection) {
-    var range = document.body.createTextRange();
-    range.moveToElementText(document.getElementById(containerid));
-    range.select().createTextRange();
-    document.execCommand("copy");
-  } else if (window.getSelection) {
-    var range = document.createRange();
-    range.selectNode(document.getElementById(containerid));
-    window.getSelection().addRange(range);
-    document.execCommand("copy");
-  }
+function copyToClipboard(element) {
+  console.log("hello");
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
 }
+
 //Restrict Count limit
 $("#messagecount").on("keypress", function (e) {
   var currentValue = String.fromCharCode(e.which);
