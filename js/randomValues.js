@@ -511,7 +511,7 @@ $("#downloadADT-btn, #downloadORM-btn, #downloadORU-btn").click(function () {
     var pid = Math.floor(Math.random() * (100000 - 1000 + 1)) + 1000;
     var event_reason_code = eventReasonCodeArray[(Math.random() * eventReasonCodeArray.length) | 0];
     var patient_name = firstname[(Math.random() * firstname.length) | 0] + "^" + middlename[(Math.random() * middlename.length) | 0] + "^" + lastname[(Math.random() * lastname.length) | 0];
-    var date_of_birth = (x.getFullYear() - 20).toString() + mm + dd + hh + mm + ss;
+    var date_of_birth = (x.getFullYear() - 20).toString() + mm + dd + hh;
     var mother_maiden_name = motherMaidenNameArray[(Math.random() * motherMaidenNameArray.length) | 0];
     $('.gender:checked').each(function () {
       genderSelectedArray.push($(this).val());
